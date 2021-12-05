@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/volunteer_nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/volunteer_nav_graph"
+    app:startDestination="@id/loginFragment">
 
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="esan.dpa.voluntariado.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_volunteerRegisterFragment"
+            app:destination="@id/volunteerRegisterFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_sponsorRegisterFragment"
+            app:destination="@id/sponsorRegisterFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_sponsorProfileFragment"
+            app:destination="@id/sponsorProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/volunteerRegisterFragment"
+        android:name="esan.dpa.voluntariado.fragments.VolunteerRegisterFragment"
+        android:label="fragment_volunteer_register"
+        tools:layout="@layout/fragment_volunteer_register" />
+    <fragment
+        android:id="@+id/sponsorRegisterFragment"
+        android:name="esan.dpa.voluntariado.fragments.SponsorRegisterFragment"
+        android:label="fragment_sponsor_register"
+        tools:layout="@layout/fragment_sponsor_register" />
+    <fragment
+        android:id="@+id/eventRegisterFragment"
+        android:name="esan.dpa.voluntariado.fragments.EventRegisterFragment"
+        android:label="fragment_event_register"
+        tools:layout="@layout/fragment_event_register" />
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="esan.dpa.voluntariado.fragments.EventListFragment"
+        android:label="fragment_event_list"
+        tools:layout="@layout/fragment_event_list" >
+        <action
+            android:id="@+id/action_eventListFragment_to_volunteerProfileFragment"
+            app:destination="@id/volunteerProfileFragment" />
+        <action
+            android:id="@+id/action_eventListFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+        <action
+            android:id="@+id/action_eventListFragment_to_planetStoreFragment"
+            app:destination="@id/planetStoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/volunteerProfileFragment"
+        android:name="esan.dpa.voluntariado.fragments.VolunteerProfileFragment"
+        android:label="fragment_volunteer_profile"
+        tools:layout="@layout/fragment_volunteer_profile" />
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="esan.dpa.voluntariado.fragments.EventDetailFragment"
+        android:label="fragment_event_detail"
+        tools:layout="@layout/fragment_event_detail" />
+    <fragment
+        android:id="@+id/planetStoreFragment"
+        android:name="esan.dpa.voluntariado.fragments.PlanetStoreFragment"
+        android:label="fragment_planet_store"
+        tools:layout="@layout/fragment_planet_store" />
+    <fragment
+        android:id="@+id/sponsorProfileFragment"
+        android:name="esan.dpa.voluntariado.fragments.SponsorProfileFragment"
+        android:label="fragment_sponsor_profile"
+        tools:layout="@layout/fragment_sponsor_profile" >
+        <action
+            android:id="@+id/action_sponsorProfileFragment_to_eventRegisterFragment"
+            app:destination="@id/eventRegisterFragment" />
+    </fragment>
 </navigation>
